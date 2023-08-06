@@ -41,6 +41,8 @@ class ArticleController extends Controller
             "title" => $request->title,
             "desc" => $request->desc,
             "user_id" => Auth::id(),
+            "category_id" => $request->category,
+
         ]);
         return redirect()->route("article.index")->with("message", "$article->title is created");
     }
@@ -71,7 +73,9 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->desc = $request->desc;
+        $article->category_id = $request->category;
         $article->update();
+
         return redirect()->route("article.index")->with('message', 'Update article successful');
 
         //Model::update() ...use when u have nothing to do from request.u need to add fillable in model.

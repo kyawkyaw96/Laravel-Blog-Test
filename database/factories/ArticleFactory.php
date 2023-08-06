@@ -20,7 +20,9 @@ class ArticleFactory extends Factory
         return [
             "title" => fake()->sentence(),
             "desc" => fake()->realText(),
-            "user_id" => rand(1, 11)
+            "category_id" => rand(1, 5),
+            "user_id" => rand(1, 11),
+
             // "user_id"=>User::all()->random()->id
 
         ];

@@ -19,6 +19,12 @@
 				<!-- Authentication Links -->
 				@auth
 					<li class="nav-item">
+						<a class="nav-link" href="{{ route('category.create') }}">Category Create</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('category.index') }}">Category Lists</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="{{ route('article.create') }}">Article Create</a>
 					</li>
 					<li class="nav-item">

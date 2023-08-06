@@ -22,6 +22,7 @@
 					<a href="{{ route('article.create') }}" class="btn btn-outline-primary">Create</a>
 					<a href="{{ route('article.index') }}" class="btn btn-outline-primary">All List</a>
 				</div>
+				<p><span class="badge bg-black">{{ $article->category_id }}</span></p>
 				<h3> {{ $article->title }}</h3>
 				<p>{{ $article->desc }}</p>
 

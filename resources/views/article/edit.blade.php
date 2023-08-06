@@ -17,6 +17,20 @@
 						@enderror
 					</div>
 					<div class="mb-3">
+						<label for="" class="form-label">Select Category</label>
+						<select name="category" class="form-select @error('category') is-invalid @enderror">
+							@foreach (App\Models\Category::all() as $category)
+								<option value="{{ $category->id }}"
+									{{ old('category', $article->category_id) == $category->id ? 'selected' : '' }}>
+									{{ $category->title }}
+								</option>
+							@endforeach
+						</select>
+						@error('category')
+							<div class="invalid-feedback">{{ $message }}</div>
+						@enderror
+					</div>
+					<div class="mb-3">
 						<label for="" class="d-block form-label">Description</label>
 
 						<textarea class="@error('desc')
